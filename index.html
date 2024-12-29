@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAIR LOSS REPORT</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #ecf0f1;
+            --input-background: #ffffff;
+            --text-color: #2c3e50;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            background-color: var(--input-background);
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+        }
+
+        button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        #result {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            background-color: #f8f9fa;
+            display: none;
+        }
+
+        .result-point {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-left: 4px solid var(--secondary-color);
+            background-color: white;
+            border-radius: 4px;
+        }
+
+        .result-heading {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HAIR LOSS REPORT</h1>
+        <form id="hairLossForm">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <select id="age" required>
+                    <option value="">Select age range</option>
+                    <option value="20-30">20-30</option>
+                    <option value="30-50">30-50</option>
+                    <option value="50+">Above 50</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" required>
+                    <option value="">Select gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="hairLossType">Type of Hair Loss:</label>
+                <select id="hairLossType" required>
+                    <option value="">Select type</option>
+                    <option value="heavy">Heavy Hair Loss</option>
+                    <option value="patches">Patches</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="duration">When did symptoms start?</label>
+                <select id="duration" required>
+                    <option value="">Select duration</option>
+                    <option value="recent">Less than a month</option>
+                    <option value="medium">1-6 months</option>
+                    <option value="long">More than 6 months</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="familyHistory">Family History of Hair Loss?</label>
+                <select id="familyHistory" required>
+                    <option value="">Select option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="chronicDiseases">Any Chronic Diseases?</label>
+                <select id="chronicDiseases" required>
+                    <option value="">Select option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="surgery">Recent Surgery?</label>
+                <select id="surgery" required>
+                    <option value="">Select option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="medication">Regular Medication?</label>
+                <select id="medication" required>
+                    <option value="">Select option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="psychological">Psychological Issues?</label>
+                <select id="psychological" required>
+                    <option value="">Select option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="dandruff">Dandruff or Psoriasis?</label>
+                <select id="dandruff" required>
+                    <option value="">Select option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="chemical">Recent Hair Treatment (Straightening/Coloring)?</label>
+                <select id="chemical" required>
+                    <option value="">Select option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <button type="submit">Analyze Hair Loss</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('hairLossForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Gather form data
+            const formData = {
+                age: document.getElementById('age').value,
+                gender: document.getElementById('gender').value,
+                hairLossType: document.getElementById('hairLossType').value,
+                duration: document.getElementById('duration').value,
+                familyHistory: document.getElementById('familyHistory').value,
+                chronicDiseases: document.getElementById('chronicDiseases').value,
+                surgery: document.getElementById('surgery').value,
+                medication: document.getElementById('medication').value,
+                psychological: document.getElementById('psychological').value,
+                dandruff: document.getElementById('dandruff').value,
+                chemical: document.getElementById('chemical').value
+            };
+
+            // Analyze the data and generate report
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            
+            let analysis = '';
+            
+            // Basic analysis based on input
+            if (formData.age === '20-30' && formData.hairLossType === 'heavy' && formData.duration === 'recent') {
+                analysis = `
+                    <div class="result-heading">Analysis Results:</div>
+                    <div class="result-point">🔍 Possible Telogen Effluvium (Stress-related hair loss)</div>
+                    
+                    <div class="result-heading">Recommendations:</div>
+                    <div class="result-point">📋 Medical Evaluation:
+                        - Complete scalp examination
+                        - Blood tests for nutritional deficiencies
+                        - Thyroid hormone level check</div>
+                    
+                    <div class="result-point">🥗 Dietary Improvements:
+                        - Increase protein intake
+                        - Consider omega-3 supplements
+                        - Ensure adequate iron and zinc intake</div>
+                    
+                    <div class="result-point">💊 Treatment Options:
+                        - Consider 5% Minoxidil under medical supervision
+                        - Use gentle, anti-hair loss shampoo
+                        - Avoid harsh chemical treatments</div>
+                    
+                    <div class="result-point">👥 Lifestyle Changes:
+                        - Stress management techniques
+                        - Improve sleep quality
+                        - Regular exercise</div>
+                    
+                    <div class="result-point">⏳ Follow-up:
+                        - Monitor for 3-6 months
+                        - Keep track of improvement
+                        - Schedule regular check-ups</div>
+                `;
+            } else {
+                // Add other condition analyses based on the document
+                analysis = `
+                    <div class="result-heading">General Recommendations:</div>
+                    <div class="result-point">⚕️ Consult a dermatologist for proper diagnosis</div>
+                    <div class="result-point">🔍 Get complete blood work done</div>
+                    <div class="result-point">💆 Take care of scalp hygiene</div>
+                    <div class="result-point">🥗 Maintain a balanced diet</div>
+                `;
+            }
+            
+            resultDiv.innerHTML = analysis;
+        });
+    </script>
+</body>
+</html>
